@@ -7,7 +7,7 @@ import { useCallback, useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 
-import useRegisterModal from "@/app/Hooks/useRegisterModel";
+import useRegisterModal from "@/app/Hooks/useRegisterModal";
 import Modal from "./Modal";
 import Heading from "../Heading";
 import Input from "../inputs/Input";
