@@ -1,6 +1,5 @@
 "use client";
 
-import axios from "axios";
 import { AiFillGithub } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { useCallback, useState } from "react";
@@ -10,6 +9,7 @@ import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 import useLoginModal from "@/app/Hooks/useLoginModal";
+import useRegisterModal from "@/app/Hooks/useRegisterModal";
 import Modal from "./Modal";
 import Heading from "../Heading";
 import Input from "../inputs/Input";
@@ -18,9 +18,17 @@ import Button from "../Button";
 const LoginModal = () => {
   const loginModal = useLoginModal();
 
+  const registerModal = useRegisterModal();
+
   const [isLoading, setIsLoading] = useState(false);
 
   const router = useRouter();
+
+  // in order to close the login modal and open the register modal
+  const toggle = useCallback(() => {
+    loginModal.onClose();
+    registerModal.onOpen();
+  }, [loginModal, registerModal]);
 
   // form logic
   const {
@@ -39,7 +47,7 @@ const LoginModal = () => {
     setIsLoading(true);
 
     signIn("credentials", {
-      ...data, // containsthe email and password
+      ...data, // contains the email and password
       redirect: false,
     }).then((callback) => {
       setIsLoading(false);
@@ -101,12 +109,12 @@ const LoginModal = () => {
       />
       <div className="text-neutral-500 text-center mt-4 font-light">
         <div className=" justify-center flex flex-row items-center gap-2">
-          <h1>Already have an account?</h1>
+          <h1>First time using Airbnb?</h1>
           <div
-            onClick={loginModal.onClose}
+            onClick={toggle}
             className="text-neutral-800 cursor-pointer hover:underline "
           >
-            Log in
+            Create an account
           </div>
         </div>
       </div>
