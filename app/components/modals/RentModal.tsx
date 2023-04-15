@@ -8,6 +8,8 @@ import Modal from "./Modal";
 import Heading from "../Heading";
 import { categoriesObjs } from "../navbar/Categories";
 import CategoryInput from "../inputs/CategoryInput";
+import CountrySelect from "../inputs/CountrySelect";
+import dynamic from "next/dynamic";
 
 // multiple steps form
 enum STEPS {
@@ -55,8 +57,18 @@ const RentModal = () => {
     },
   });
 
-  // bining the custom inputs to the useform hook
+  // binding the custom inputs to the useform hook
   const category = watch("category");
+  const location = watch("location");
+
+  // to import our map component
+  const Map = useMemo(
+    () =>
+      dynamic(() => import("../Map"), {
+        ssr: false,
+      }),
+    [location]
+  );
 
   // to change the default values in useform
   const setCustomValue = (id: string, value: any) => {
@@ -108,12 +120,32 @@ const RentModal = () => {
     </div>
   );
 
+  if (step === STEPS.LOCATION) {
+    // second step in the form
+
+    bodyContent = (
+      <div className="flex flex-col gap-8">
+        <Heading
+          title="Where is your place located?"
+          subtitle="Help guests find you!"
+        />
+        <CountrySelect
+          value={location}
+          onChange={(value) => {
+            setCustomValue("location", value);
+          }}
+        />
+        <Map center={location?.lating} />
+      </div>
+    );
+  }
+
   return (
     <Modal
       title="Airbnb your home!"
       isOpen={rentModal.isOpen}
       onClose={rentModal.onClose}
-      onSubmit={rentModal.onClose}
+      onSubmit={onNext}
       actionLabel={actionLabel}
       secondaryActionLabel={secondaryActionLabel}
       secondaryAction={step === STEPS.CATEGORY ? undefined : onBack} // if we are on the first step dont allow the user to go back
