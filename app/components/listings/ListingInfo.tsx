@@ -17,11 +17,13 @@ interface ListingInfoProps {
   guestCount: number;
   roomCount: number;
   bathroomCount: number;
-  category: {
-    label: string;
-    icon: IconType;
-    description: string | undefined;
-  };
+  category:
+    | {
+        label: string;
+        icon: IconType;
+        description: string;
+      }
+    | undefined;
   locationValue: string;
 }
 
