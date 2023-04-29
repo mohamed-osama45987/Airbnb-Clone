@@ -180,7 +180,7 @@ const RentModal = () => {
             setCustomValue("location", value);
           }}
         />
-        <Map center={location?.lating} />
+        <Map center={location?.latlng} />
       </div>
     );
   }
