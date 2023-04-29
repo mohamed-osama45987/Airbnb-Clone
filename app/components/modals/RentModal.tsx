@@ -59,10 +59,10 @@ const RentModal = () => {
       .post("/api/listings", data)
       .then(() => {
         toast.success("Lisiting Created!");
-        router.refresh();
+        rentModal.onClose();
         reset(); // reset form values using the useForm lib
         setStep(STEPS.CATEGORY);
-        rentModal.onClose();
+        router.refresh();
       })
       .catch(() => {
         toast.error("Something went wrong.");
