@@ -28,7 +28,7 @@ const ImageUpload: React.FC<ImageUploadPorps> = ({ onChange, value }) => {
       uploadPreset="qornw0oo" // from the cloudinary account setting
       options={{
         maxFiles: 1,
-        maxFileSize: 1500000, // 1.5 mb
+        maxFileSize: 10000000, // 10 mb
       }}
     >
       {({ open }) => {
