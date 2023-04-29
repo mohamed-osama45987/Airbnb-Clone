@@ -229,7 +229,7 @@ const RentModal = () => {
     bodyContent = (
       <div className="flex flex-col gap-8">
         <Heading
-          title="Add a photo of your palce"
+          title="Add a photo of your place"
           subtitle="Show guests what your palce looks like!"
         />
 
