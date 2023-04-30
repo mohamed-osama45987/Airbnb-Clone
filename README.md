@@ -1,4 +1,4 @@
-# 🏠 Airbnb Clone
+# 🏠 Full Stack Airbnb Clone with Next.js
 
 This is a project that aims to replicate the functionality of the popular vacation rental platform, Airbnb. It was built using NextJs, React, Node.js, and MongoDB.
 
