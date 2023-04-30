@@ -5,7 +5,7 @@
 
 Live-Link : https://properties-rent.vercel.app/
 
-This is a project that aims to replicate the functionality of the popular vacation rental platform, Airbnb. It was built using NextJs, React, Node.js, and MongoDB.
+This is a project that aims to replicate the functionality of the popular vacation rental platform, Airbnb. It was built using NextJs, React, Typescript, Node.js, Primsa, and MongoDB.
 
 ## Features
 
