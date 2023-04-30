@@ -1,8 +1,8 @@
 # 🏠 Full Stack Airbnb Clone with Next.js
-![AirbnbClone](https://ibb.co/7YMzH1m/image.png)  
+![AirbnbClone](https://ibb.co/7YMzH1m)  
 
 
-Live-Link : https://properties-rent.vercel.app
+Live-Link : https://properties-rent.vercel.app/
 
 This is a project that aims to replicate the functionality of the popular vacation rental platform, Airbnb. It was built using NextJs, React, Node.js, and MongoDB.
 
