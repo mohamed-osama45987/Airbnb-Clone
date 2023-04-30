@@ -1,5 +1,6 @@
 # 🏠 Full Stack Airbnb Clone with Next.js
 
+![2023-04-30 10_56_31-Airbnb](https://user-images.githubusercontent.com/58946020/235342732-a85a9baf-62d4-42f3-83df-338ea3c9a021.png)
 
 
 Live-Link : https://properties-rent.vercel.app/
